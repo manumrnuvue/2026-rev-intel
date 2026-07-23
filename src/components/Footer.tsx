@@ -1,4 +1,6 @@
-import { Link } from "react-router-dom";
+"use client";
+
+import Link from "next/link";
 import Logo from "./Logo";
 
 export default function Footer() {
@@ -11,22 +13,22 @@ export default function Footer() {
                 </span>
                 <div className="cols">
                     <div className="foot-col">
-                        <Link to="/product">Product</Link>
-                        <Link to="/solutions">Solutions</Link>
-                        <Link to="/roi">ROI</Link>
-                        <Link to="/pricing">Pricing</Link>
+                        <Link href="/product">Product</Link>
+                        <Link href="/solutions">Solutions</Link>
+                        <Link href="/roi">ROI</Link>
+                        <Link href="/pricing">Pricing</Link>
                     </div>
                     <div className="foot-col">
-                        <Link to="/customers">Customers</Link>
-                        <Link to="/resources">Resources</Link>
-                        <Link to="/about">About us</Link>
-                        <Link to="/careers">Careers</Link>
-                        <Link to="/contact">Contact</Link>
+                        <Link href="/customers">Customers</Link>
+                        <Link href="/resources">Resources</Link>
+                        <Link href="/about">About us</Link>
+                        <Link href="/careers">Careers</Link>
+                        <Link href="/contact">Contact</Link>
                     </div>
                     <div className="foot-col">
-                        <Link to="/trust-center">Trust Center</Link>
-                        <Link to="/privacy">Privacy Policy</Link>
-                        <Link to="/terms">Terms of Service</Link>
+                        <Link href="/trust-center">Trust Center</Link>
+                        <Link href="/privacy">Privacy Policy</Link>
+                        <Link href="/terms">Terms of Service</Link>
                     </div>
                 </div>
             </div>

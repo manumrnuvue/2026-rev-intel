@@ -1,3 +1,5 @@
+"use client";
+
 type FaqItem = { q: string; a: string };
 
 export default function Faq({ items }: { items: FaqItem[] }) {

@@ -1,3 +1,5 @@
+"use client";
+
 import { useRef, useState } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -117,7 +119,7 @@ export default function ValueModel() {
                                 <span className="val num">{v.appeals}</span>
                             </div>
                             <div className="vm-row total">
-                                <span className="lbl">Total indicative annual value</span>
+                                <span className="lbl">Total annual value</span>
                                 <span className="val num">{v.total}</span>
                             </div>
                         </div>

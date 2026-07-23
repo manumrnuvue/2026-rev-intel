@@ -2746,34 +2746,41 @@ a {
 /* ============ SCROLL SPINE ============ */
 .spine-zone {
     position: relative;
+    /* Contain the 0/1 layering below so it can't interact with outside
+       stacking contexts, and so the whole zone layers self-consistently. */
+    isolation: isolate;
 }
 
-/* Thread the spine BETWEEN each section's background and its content: the
-   section box itself stays a plain positioned element (no z-index → not a
-   stacking context), so its background paints in the same layer as the spine
-   and, being earlier in the DOM, sits *under* it. */
+/* The section box itself stays a plain positioned element with no z-index (not
+   a stacking context), so its background paints in the same base layer as the
+   spine and, being earlier in the DOM, sits *under* it — letting the line
+   thread over light AND dark chapters alike. */
 .spine-zone > *:not(.spine) {
     position: relative;
 }
 
-/* Every section's own content is lifted above the spine, so the line never
-   overlaps readable text or cards — it only shows in the negative space around
-   them, on light AND dark sections alike. */
-.spine-zone > *:not(.spine) > * {
+/* Lift every section's CONTENT above the spine — at ANY nesting depth,
+   including the .pin-spacer wrapper GSAP injects around every pinned
+   trigger (.chat-pin, .den-pin, .tools-pin, or any future one). Structural,
+   so a new pinned chapter is covered automatically without needing its
+   class name added here. The line then only ever shows in the negative
+   space around content, never on top of text or cards, on every page.
+   Deliberately stops at .pin-spacer and does NOT reach into the actual
+   pinned element inside it: giving that element its own `position:
+   relative` (required for z-index to apply at all) makes GSAP ScrollTrigger
+   treat it as already explicitly positioned and fall back to the slower
+   `pinType: "transform"` instead of its default, smooth, compositor-only
+   `position: fixed` — that regression shipped once already and caused a
+   visible stutter on every pinned chapter. A position:relative + z-index:1
+   ancestor still keeps a `position: fixed` descendant in its stacking
+   context for paint order (that's a separate mechanism from the fixed
+   element's *containing block*, which is a non-issue here since we don't
+   need the pinned element positioned relative to anything but the
+   viewport), so .pin-spacer alone is enough to keep it above the spine. */
+.spine-zone .wrap,
+.spine-zone .pin-spacer {
     position: relative;
     z-index: 1;
-}
-
-/* …except full-bleed decorative layers (glows, gradient blobs, scroll cue).
-   The lift rule above would force these absolutely-positioned elements into
-   normal flow and shove the real content down; restore their positioning and
-   let them sit beneath the spine. */
-.spine-zone > *:not(.spine) > .blob,
-.spine-zone > *:not(.spine) > .hero-glow,
-.spine-zone > *:not(.spine) > .cta-glow,
-.spine-zone > *:not(.spine) > .scroll-cue {
-    position: absolute;
-    z-index: 0;
 }
 
 .spine {
@@ -4624,5 +4631,224 @@ a {
 @keyframes ri-blink {
     50% {
         opacity: 0;
+    }
+}
+
+/* ============ DEMO / CONTACT FORM ============ */
+/* Uses .demo-grid (not .wrap) for the two-column split so it never collides
+   with `.cta-scene .wrap`'s centered flex-column rule, which otherwise wins
+   on specificity and forces this back into a single centered stack. */
+.demo-scene {
+    min-height: 0;
+    padding: 120px 0 100px;
+    display: block;
+    text-align: left;
+}
+
+.demo-scene .wrap {
+    display: block;
+}
+
+.demo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: start;
+    text-align: left;
+}
+
+.demo-aside .sub {
+    margin-top: 18px;
+}
+
+.demo-benefits {
+    list-style: none;
+    margin: 26px 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+.demo-benefits li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--ink-2);
+}
+
+.demo-benefits svg {
+    flex: none;
+    margin-top: 2px;
+    color: var(--green, #46c98a);
+}
+
+.demo-badges {
+    display: flex;
+    gap: 10px;
+    margin-top: 28px;
+    flex-wrap: wrap;
+}
+
+/* The form panel reuses the site's mac-window .panel/.panel-bar component,
+   the same dark card used for Contract Repository, Rate Health, etc. — so
+   it reads as the same design system, not a bespoke card. `.panel` normally
+   flips to a WHITE card inside `.scene.light`/`.scene.lighter` (see rules
+   above) — this section is `scene light`, so without the override below the
+   card renders white while every field/text color here still assumes the
+   dark card, making input text and borders invisible. Force it back to the
+   dark treatment regardless of the section's light/lighter modifier. */
+.scene.light .demo-form-panel,
+.scene.lighter .demo-form-panel {
+    background: #101014;
+    border-color: rgba(255, 255, 255, 0.09);
+    box-shadow:
+        0 40px 90px -30px rgba(0, 0, 0, 0.7),
+        0 0 0 1px rgba(0, 0, 0, 0.4);
+}
+
+.scene.light .demo-form-panel .panel-bar,
+.scene.lighter .demo-form-panel .panel-bar {
+    border-color: rgba(255, 255, 255, 0.07);
+    color: var(--mist);
+}
+
+.demo-form-panel {
+    overflow: visible;
+}
+
+.demo-form-body {
+    padding: 26px 28px 30px;
+}
+
+.demo-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.demo-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.demo-field {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.demo-field label {
+    font-size: 12.5px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: #b8b8bf;
+}
+
+.demo-field .req {
+    color: var(--coral, #ed6861);
+}
+
+.demo-field input,
+.demo-field select,
+.demo-field textarea {
+    width: 100%;
+    padding: 12px 14px;
+    font-family: inherit;
+    font-size: 14.5px;
+    color: #f2f2f4;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    outline: none;
+    transition: border-color 0.16s ease, box-shadow 0.16s ease, background 0.16s ease;
+}
+
+.demo-field select option {
+    background: #101014;
+    color: #f2f2f4;
+}
+
+.demo-field input::placeholder,
+.demo-field textarea::placeholder {
+    color: rgba(242, 242, 244, 0.35);
+}
+
+.demo-field textarea {
+    resize: vertical;
+    min-height: 88px;
+}
+
+.demo-field input:focus,
+.demo-field select:focus,
+.demo-field textarea:focus {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--violet, #9b6fd4);
+    box-shadow: 0 0 0 3px rgba(155, 111, 212, 0.22);
+}
+
+.demo-submit {
+    margin-top: 6px;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    cursor: pointer;
+    border: none;
+}
+
+.demo-submit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.demo-legal {
+    margin: 4px 0 0;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #8a8a92;
+}
+
+.demo-error {
+    margin: 0;
+    padding: 10px 14px;
+    font-size: 14px;
+    color: #ff9d97;
+    background: rgba(242, 112, 106, 0.14);
+    border: 1px solid rgba(242, 112, 106, 0.32);
+    border-radius: 10px;
+}
+
+.demo-success {
+    text-align: center;
+    padding: 34px 12px;
+}
+
+.demo-success h2 {
+    margin: 0 0 12px;
+    font-size: 26px;
+    color: #f2f2f4;
+}
+
+.demo-success p {
+    margin: 0;
+    color: #b8b8bf;
+    line-height: 1.55;
+}
+
+@media (max-width: 860px) {
+    .demo-scene {
+        padding: 90px 0 70px;
+    }
+
+    .demo-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .demo-form-row {
+        grid-template-columns: 1fr;
     }
 }

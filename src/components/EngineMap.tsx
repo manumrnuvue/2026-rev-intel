@@ -1,3 +1,5 @@
+"use client";
+
 import { useRef } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -10,7 +12,6 @@ const CORAL = "#ed6861";
 const BLUE = "#4e7af7";
 const GREEN = "#46c98a";
 const VIOLET = "#9b6fd4";
-const RED = "#f2706a";
 
 type Pt = { id: string; x: number; y: number; r: number; color: string };
 
@@ -66,61 +67,21 @@ export default function EngineMap() {
             const moneyEls = gsap.utils.toArray<SVGTextElement>(".eg-money");
             const totalEl = root.querySelector<SVGTextElement>(".eg-total-num");
 
-            if (prefersReducedMotion()) {
-                gsap.set(".eg-edge", { strokeDashoffset: 0 });
-                gsap.set(".eg-node, .eg-edge-halo, .eg-pulse", { opacity: 1 });
-                gsap.set(".eg-node", { scale: 1 });
-                moneyEls.forEach((el, i) => {
-                    el.textContent = fmtMod(MODULES[i].value);
-                    el.style.fill = GREEN;
-                });
-                if (totalEl) totalEl.textContent = fmtTotal(SUM);
-                return;
-            }
-
-            gsap.set(".eg-node", { transformOrigin: "center", transformBox: "fill-box", scale: 0, opacity: 0 });
-            gsap.set(".eg-edge", { strokeDashoffset: 1 });
-            gsap.set(".eg-edge-halo", { opacity: 0 });
-            gsap.set(".eg-pulse", { opacity: 0 });
-            moneyEls.forEach((el) => {
-                el.textContent = "";
-                el.style.fill = RED;
+            // Static engine graph: no popup/scale-in, no pulsing halos or float.
+            // Edges drawn, nodes shown, dollar readouts at their final green value.
+            gsap.set(".eg-edge", { strokeDashoffset: 0 });
+            gsap.set(".eg-node, .eg-edge-halo, .eg-pulse", { opacity: 1 });
+            gsap.set(".eg-node", { scale: 1 });
+            moneyEls.forEach((el, i) => {
+                el.textContent = fmtMod(MODULES[i].value);
+                el.style.fill = GREEN;
             });
-            if (totalEl) totalEl.textContent = fmtTotal(0);
+            if (totalEl) totalEl.textContent = fmtTotal(SUM);
 
-            const sel = (ids: string[]) => ids.map((id) => `.eg-node[data-id="${id}"]`);
-            const edge = (ids: string[]) => ids.map((id) => `.eg-edge[data-edge="${id}"]`);
-            const outEdges = MODULES.map((m) => `eo-${m.id}`);
-            const mergeEdges = MODULES.map((m) => `em-${m.id}`);
+            if (prefersReducedMotion()) return;
 
-            const tl = gsap.timeline({ scrollTrigger: { trigger: ".eg-card", start: "top 74%" } });
-
-            // inputs → engine → fan out to modules
-            tl.to(sel(["src-h", "src-c"]), { scale: 1, opacity: 1, duration: 0.5, stagger: 0.12, ease: "back.out(1.7)" })
-                .to(edge(["ei-h", "ei-c"]), { strokeDashoffset: 0, duration: 0.6, ease: "power2.inOut" }, "-=0.2")
-                .to(sel(["hub"]), { scale: 1, opacity: 1, duration: 0.6, ease: "back.out(1.5)" }, "-=0.2")
-                .to(edge(outEdges), { strokeDashoffset: 0, duration: 0.7, stagger: 0.06, ease: "power2.inOut" }, "-=0.1")
-                .to(sel(MODULES.map((m) => m.id)), { scale: 1, opacity: 1, duration: 0.45, stagger: 0.08, ease: "back.out(2)" }, "-=0.5");
-
-            // each module detects a loss (red) and recovers it (counts up, turns green)
-            tl.addLabel("detect", "-=0.2");
-            MODULES.forEach((m, i) => {
-                const el = moneyEls[i];
-                const at = `detect+=${i * 0.16}`;
-                const obj = { v: 0 };
-                tl.to(obj, { v: m.value, duration: 1.1, ease: "power1.out", onUpdate: () => { el.textContent = fmtMod(obj.v); } }, at);
-                tl.to(el, { fill: GREEN, duration: 1.1, ease: "power1.inOut" }, at);
-                tl.fromTo(`.eg-flash[data-id="${m.id}"]`, { scale: 0.6, opacity: 0.9 }, { scale: 2.4, opacity: 0, duration: 0.9, ease: "power2.out", transformOrigin: "center", transformBox: "fill-box" }, at);
-            });
-
-            // …then every module merges into one recovered total
-            tl.to(edge(mergeEdges), { strokeDashoffset: 0, duration: 0.8, stagger: 0.05, ease: "power2.inOut" }, "detect+=0.6")
-                .to(sel(["total"]), { scale: 1, opacity: 1, duration: 0.7, ease: "back.out(1.5)" }, "detect+=0.9")
-                .to({ v: 0 }, { v: SUM, duration: 1.6, ease: "power2.out", onUpdate: function () { if (totalEl) totalEl.textContent = fmtTotal((this.targets()[0] as { v: number }).v); } }, "detect+=1.0")
-                .to(".eg-edge-halo", { opacity: 1, duration: 0.7 }, "detect+=0.6")
-                .to(".eg-pulse", { opacity: 1, duration: 0.4 }, "detect+=1.0");
-
-            // continuous flow: data in from sources, money out into the total
+            // The one motion that stays live: money flowing along the edges —
+            // data in from the sources, recovered dollars out into the total.
             gsap.utils.toArray<SVGCircleElement>(".eg-pulse").forEach((dot, i) => {
                 const edgeId = dot.dataset.edge!;
                 const stage = Number(dot.dataset.stage);
@@ -132,12 +93,6 @@ export default function EngineMap() {
                     delay: (stage === 0 ? 0 : 1) * 0.8 + (i % 4) * 0.25,
                     repeatDelay: 1.2,
                 });
-            });
-
-            gsap.to(".eg-hub-halo", { scale: 1.16, opacity: 0.16, transformOrigin: "center", transformBox: "fill-box", duration: 2.4, ease: "sine.inOut", yoyo: true, repeat: -1 });
-            gsap.to(".eg-total-halo", { scale: 1.14, opacity: 0.18, transformOrigin: "center", transformBox: "fill-box", duration: 2, ease: "sine.inOut", yoyo: true, repeat: -1 });
-            gsap.utils.toArray<SVGGElement>('.eg-node[data-kind="module"]').forEach((g, i) => {
-                gsap.to(g, { y: "+=6", duration: 2 + (i % 3) * 0.4, ease: "sine.inOut", yoyo: true, repeat: -1, delay: (i % 4) * 0.3 });
             });
         },
         { scope: rootRef },

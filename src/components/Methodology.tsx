@@ -1,3 +1,5 @@
+"use client";
+
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { Words, revealCopy, revealWords } from "../lib/anim";

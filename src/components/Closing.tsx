@@ -1,3 +1,5 @@
+"use client";
+
 import { useRef, type ReactNode } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -110,7 +112,7 @@ export default function Closing() {
                         <br />
                         We'll return the number. It's yours either way.
                     </p>
-                    <a className="btn-big" href="mailto:manu@nuvae.ai?subject=Nuvae%20walkthrough">
+                    <a className="btn-big" href="mailto:contact@nuvae.ai?subject=Nuvae%20walkthrough">
                         Book a walkthrough
                     </a>
                     <button className="btn-quiet" onClick={() => scrollToId("layers")}>

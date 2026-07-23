@@ -1,3 +1,5 @@
+"use client";
+
 import { useRef } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -99,9 +101,7 @@ export default function CompareTable() {
                 </div>
 
                 <p className="cmp2-foot">
-                    Industry figures are third-party published benchmarks, cited above. Nuvae
-                    figures are indicative, drawn from pilot and early deployment data — actual
-                    results vary by hospital.
+                    Industry figures are third-party published benchmarks, cited above.
                 </p>
             </div>
         </section>

@@ -1,5 +1,8 @@
+"use client";
+
 import { useEffect, useRef, useState } from "react";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import Logo from "./Logo";
 
@@ -21,7 +24,7 @@ export default function Header() {
     const [onDark, setOnDark] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
     const lastY = useRef(0);
-    const { pathname } = useLocation();
+    const pathname = usePathname();
     const showDarkGlass = onDark && !menuOpen;
 
     /* Close the mobile menu on navigation, and lock body scroll while it's open. */
@@ -75,19 +78,19 @@ export default function Header() {
         <>
             <header className={`nav ${hidden ? "hidden" : ""} ${dark ? "on-dark" : ""} ${menuOpen ? "menu-open" : ""}`}>
                 <div className="wrap">
-                    <Link className="logo" to="/" aria-label="Nuvae — home">
+                    <Link className="logo" href="/" aria-label="Nuvae — home">
                         <Logo tone={dark ? "light" : "dark"} height={20} />
                     </Link>
                     {LINKS.map((l) => (
-                        <NavLink
+                        <Link
                             key={l.to}
-                            to={l.to}
-                            className={({ isActive }) => `lnk ${isActive ? "active" : ""}`}
+                            href={l.to}
+                            className={`lnk ${pathname === l.to ? "active" : ""}`}
                         >
                             {l.label}
-                        </NavLink>
+                        </Link>
                     ))}
-                    <Link className="cta" to="/contact">
+                    <Link className="cta" href="/contact">
                         Book a walkthrough
                     </Link>
                     <button
@@ -108,15 +111,15 @@ export default function Header() {
             >
                 <nav className="nav-mobile-panel" onClick={(e) => e.stopPropagation()}>
                     {LINKS.map((l) => (
-                        <NavLink
+                        <Link
                             key={l.to}
-                            to={l.to}
-                            className={({ isActive }) => `nav-mobile-lnk ${isActive ? "active" : ""}`}
+                            href={l.to}
+                            className={`nav-mobile-lnk ${pathname === l.to ? "active" : ""}`}
                         >
                             {l.label}
-                        </NavLink>
+                        </Link>
                     ))}
-                    <Link className="btn-big nav-mobile-cta" to="/contact">
+                    <Link className="btn-big nav-mobile-cta" href="/contact">
                         Book a walkthrough
                     </Link>
                 </nav>

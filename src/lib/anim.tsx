@@ -1,3 +1,5 @@
+"use client";
+
 import { Fragment } from "react";
 import { gsap } from "gsap";
 
@@ -30,10 +32,10 @@ export function revealWords(scope: HTMLElement) {
     scope.querySelectorAll(".words").forEach((el) => {
         gsap.to(el.querySelectorAll(".w > span"), {
             y: 0,
-            duration: 0.9,
-            stagger: 0.05,
-            ease: "power4.out",
-            scrollTrigger: { trigger: el, start: "top 80%" },
+            duration: 0.55,
+            stagger: 0.03,
+            ease: "power3.out",
+            scrollTrigger: { trigger: el, start: "top 90%" },
         });
     });
 }
@@ -43,10 +45,10 @@ export function revealCopy(scope: HTMLElement) {
     scope.querySelectorAll<HTMLElement>(".sub, .kicker").forEach((el) => {
         gsap.from(el, {
             opacity: 0,
-            y: 26,
-            duration: 0.9,
+            y: 20,
+            duration: 0.5,
             ease: "power3.out",
-            scrollTrigger: { trigger: el, start: "top 88%" },
+            scrollTrigger: { trigger: el, start: "top 92%" },
         });
     });
 }

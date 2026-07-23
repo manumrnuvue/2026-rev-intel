@@ -1,5 +1,7 @@
+"use client";
+
 import { useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { MessageCircle, Send, X } from "lucide-react";
 
 type Role = "user" | "assistant";
@@ -15,7 +17,7 @@ const MAX_INPUT_LEN = 1500;
 const GREETING: ChatMessage = {
     role: "assistant",
     content:
-        "Hi, I'm Nova — ask me anything about Nuvae: the product, pricing, or security. For anything urgent, use the Contact page.",
+        "Hi, I'm Nova — ask me anything about Nuvae: the product, pricing, security, or how to get in touch. I'll try to answer right here.",
 };
 
 export default function ChatWidget() {
@@ -108,7 +110,7 @@ export default function ChatWidget() {
                             <div className={`chatw-msg ${m.role} ${m.error ? "error" : ""}`} key={i}>
                                 <p>{m.content}</p>
                                 {m.suggestedPage && (
-                                    <Link className="chatw-suggest" to={m.suggestedPage.path} onClick={() => setOpen(false)}>
+                                    <Link className="chatw-suggest" href={m.suggestedPage.path} onClick={() => setOpen(false)}>
                                         {m.suggestedPage.label} →
                                     </Link>
                                 )}
@@ -145,11 +147,11 @@ export default function ChatWidget() {
                         </button>
                     </div>
                     <p className="chatw-disclaimer">
-                        AI assistant — verify anything important. For sales or support,{" "}
-                        <Link to="/contact" onClick={() => setOpen(false)}>
-                            contact us directly
-                        </Link>
-                        .
+                        AI assistant — verify anything important. Ready to schedule a demo? The{" "}
+                        <Link href="/contact" onClick={() => setOpen(false)}>
+                            Contact form
+                        </Link>{" "}
+                        works too.
                     </p>
                 </div>
             )}

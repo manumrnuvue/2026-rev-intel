@@ -1,4 +1,6 @@
-import { useRef, useState } from "react";
+"use client";
+
+import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { LETTER_PATHS, LOGO_DOTS } from "./Logo";
@@ -11,12 +13,18 @@ const SEEN_KEY = "nuvae-intro-seen";
  * Shown once per browser session; skipped entirely under reduced motion.
  */
 export default function BootIntro() {
-    const [done, setDone] = useState(
-        () =>
-            sessionStorage.getItem(SEEN_KEY) === "1" ||
-            window.matchMedia("(prefers-reduced-motion: reduce)").matches,
-    );
+    // Start "done" so the server render and first client render agree (no
+    // curtain in the SSR HTML); decide for real once mounted in the browser,
+    // where sessionStorage / matchMedia exist.
+    const [done, setDone] = useState(true);
     const rootRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const seen =
+            sessionStorage.getItem(SEEN_KEY) === "1" ||
+            window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        if (!seen) setDone(false);
+    }, []);
 
     useGSAP(
         () => {

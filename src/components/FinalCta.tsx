@@ -1,7 +1,9 @@
+"use client";
+
 import { useRef } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { Words, prefersReducedMotion } from "../lib/anim";
 
 export default function FinalCta() {
@@ -36,7 +38,7 @@ export default function FinalCta() {
                     <br />
                     We'll return the number. It's yours either way.
                 </p>
-                <Link className="btn-big" to="/contact">
+                <Link className="btn-big" href="/contact">
                     Book a walkthrough
                 </Link>
             </div>

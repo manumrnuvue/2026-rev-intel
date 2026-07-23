@@ -1,7 +1,10 @@
+"use client";
+
 import { useRef } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { Words, formatUsd, prefersReducedMotion, revealCopy, revealWords } from "../lib/anim";
+import Logo from "./Logo";
 
 const FILES: Array<{ chip: string; kind: "ok" | "warn" | "info"; name: string; meta: string }> = [
     { chip: "CLASSIFIED · PPO", kind: "ok", name: "BlueShield 2026.pdf", meta: "v4 · 182 pages" },
@@ -410,7 +413,9 @@ export default function Contracts() {
                         <span className="ring" />
                         <span className="ring" />
                         <span className="ring" />
-                        <span className="core">nuvae</span>
+                        <span className="core">
+                            <Logo tone="light" animated={false} height={9} />
+                        </span>
                         <span className="pulse" />
                         <span className="sat s1">
                             <i>●</i>Medicare IPPS/OPPS
@@ -452,7 +457,7 @@ export default function Contracts() {
                         $0
                     </div>
                     <p className="sub sav-sub">
-                        indicative annual value from contract analytics alone, at a $300M-NPR
+                        annual value from contract analytics alone, at a $300M-NPR
                         hospital — mid-path, year one.
                         <br />
                         Underpayment recovery. Rate negotiation uplift. Analyst time back.

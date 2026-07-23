@@ -1,0 +1,20 @@
+# Local secrets — never commit real Azure OpenAI keys.
+.env
+.env.local
+.env.*.local
+
+# Dependencies
+node_modules/
+
+# Next.js build output
+.next/
+out/
+build/
+*.tsbuildinfo
+
+# Local tooling / editor + agent config
+.claude/
+
+# OS junk
+.DS_Store
+Thumbs.db
