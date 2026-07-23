@@ -1,1 +1,0 @@
-import{j as s}from"./index-CoySgEe1.js";function e({items:r}){return s.jsx("dl",{className:"faq-list",children:r.map(a=>s.jsxs("div",{className:"faq-item",children:[s.jsx("dt",{children:a.q}),s.jsx("dd",{children:a.a})]},a.q))})}export{e as F};
