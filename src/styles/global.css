@@ -1907,7 +1907,10 @@ a {
 .den-card {
     border-radius: 18px;
     padding: 20px 22px;
-    background: rgba(255, 255, 255, 0.05);
+    /* Opaque (not translucent) so the spine passes behind it and shows only
+       in the margins around the stack — never bleeding through the card,
+       same convention as .cmp2-table. */
+    background: #101014;
     border: 1px solid rgba(255, 255, 255, 0.09);
     opacity: 0;
     transform: translateY(24px);
@@ -2780,7 +2783,13 @@ a {
 .spine-zone .wrap,
 .spine-zone .pin-spacer {
     position: relative;
-    z-index: 1;
+    /* !important: GSAP inline-styles every pin-spacer it creates, including
+       an explicit `z-index: auto` (mirroring the pinned element's own
+       computed value). That inline style otherwise beats this rule outright,
+       silently undoing the lift-above-spine effect for every pinned chapter
+       (only visible where content is wide enough to sit under the stroke,
+       e.g. the tools horizontal-scroll cards). */
+    z-index: 1 !important;
 }
 
 .spine {

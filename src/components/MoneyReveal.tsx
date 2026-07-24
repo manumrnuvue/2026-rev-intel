@@ -19,20 +19,63 @@ const money = (n: number) => "$" + Math.round(n).toLocaleString("en-US");
  */
 export default function MoneyReveal() {
     const rootRef = useRef<HTMLElement>(null);
+    const lossNumRef = useRef<HTMLDivElement>(null);
+    const recoverNumRef = useRef<HTMLDivElement>(null);
 
     useGSAP(
         () => {
             const root = rootRef.current;
-            if (!root || prefersReducedMotion()) return;
+            if (!root) return;
+            if (prefersReducedMotion()) {
+                if (lossNumRef.current) lossNumRef.current.textContent = money(LOSS);
+                if (recoverNumRef.current) recoverNumRef.current.textContent = money(RECOVERED);
+                return;
+            }
 
-            gsap.from(root.querySelectorAll<HTMLElement>(".money-loss, .money-recover"), {
-                autoAlpha: 0,
-                y: 24,
-                duration: 0.5,
-                stagger: 0.15,
-                ease: "power3.out",
-                scrollTrigger: { trigger: root, start: "top 70%", once: true },
-            });
+            const loss = { v: 0 };
+            const recovered = { v: 0 };
+
+            /* Scrubbed to actual scroll position (not a fixed-duration timed
+               tween) so the count always matches how far the section has
+               scrolled into view — a fast scroll can't outrun it and land on
+               the section already finished/static. */
+            gsap
+                .timeline({
+                    scrollTrigger: {
+                        trigger: root,
+                        start: "top bottom",
+                        end: "top top",
+                        scrub: 0.4,
+                    },
+                })
+                .from(root.querySelectorAll<HTMLElement>(".money-loss, .money-recover"), {
+                    autoAlpha: 0,
+                    y: 24,
+                    stagger: 0.3,
+                    ease: "none",
+                })
+                .to(
+                    loss,
+                    {
+                        v: LOSS,
+                        ease: "none",
+                        onUpdate: () => {
+                            if (lossNumRef.current) lossNumRef.current.textContent = money(loss.v);
+                        },
+                    },
+                    "<",
+                )
+                .to(
+                    recovered,
+                    {
+                        v: RECOVERED,
+                        ease: "none",
+                        onUpdate: () => {
+                            if (recoverNumRef.current) recoverNumRef.current.textContent = money(recovered.v);
+                        },
+                    },
+                    "<0.3",
+                );
         },
         { scope: rootRef },
     );
@@ -42,7 +85,9 @@ export default function MoneyReveal() {
             <div className="wrap money-wrap">
                 <div className="money-loss">
                     <span className="money-label">Every year, a mid-size hospital quietly loses</span>
-                    <div className="money-num loss num">{money(LOSS)}</div>
+                    <div className="money-num loss num" ref={lossNumRef}>
+                        $0
+                    </div>
                     <p className="money-sub">
                         to underpayment, eligibility denials, and appeals no one had time to
                         work — revenue you earned but never collected.
@@ -54,7 +99,9 @@ export default function MoneyReveal() {
                         ↓
                     </span>
                     <span className="money-label recovered">Nuvae finds the gap — and recovers</span>
-                    <div className="money-num gain num">{money(RECOVERED)}</div>
+                    <div className="money-num gain num" ref={recoverNumRef}>
+                        $0
+                    </div>
                     <p className="money-sub">
                         brought back and returned to your bottom line. Money that was always
                         yours.

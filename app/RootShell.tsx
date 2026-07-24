@@ -8,7 +8,7 @@ import { useGSAP } from "@gsap/react";
 import BootIntro from "../src/components/BootIntro";
 import Header from "../src/components/Header";
 import Footer from "../src/components/Footer";
-import ChatWidget from "../src/components/ChatWidget";
+import TawkToWidget from "../src/components/TawkToWidget";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
@@ -41,7 +41,7 @@ export default function RootShell({ children }: { children: React.ReactNode }) {
             <ScrollToTop />
             <main>{children}</main>
             <Footer />
-            <ChatWidget />
+            <TawkToWidget />
         </>
     );
 }

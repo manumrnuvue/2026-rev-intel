@@ -65,6 +65,32 @@ export default function Contact() {
         <section className="scene light demo-scene" id="contact" ref={rootRef}>
             <div className="wrap">
                 <div className="demo-grid">
+                    <div className="demo-aside">
+                        <p className="kicker">Get in touch</p>
+                        <h1 className="h-giant">
+                            See Nuvae.ai
+                            <br />
+                            in action.
+                        </h1>
+                        <p className="sub">
+                            Schedule a personalized demo and discover how Nuvae protects revenue
+                            across your revenue cycle. Prefer to talk first? Our assistant in the
+                            corner can answer most questions right now.
+                        </p>
+                        <ul className="demo-benefits">
+                            {BENEFITS.map((b) => (
+                                <li key={b}>
+                                    <Check size={17} strokeWidth={2.4} />
+                                    {b}
+                                </li>
+                            ))}
+                        </ul>
+                        <div className="demo-badges">
+                            <span className="trust-chip">HIPAA Certified</span>
+                            <span className="trust-chip">SOC 2 Certified</span>
+                        </div>
+                    </div>
+
                     <div className="panel demo-form-panel">
                         <div className="panel-bar">
                             <span className="dots">
@@ -149,32 +175,6 @@ export default function Contact() {
                                     </p>
                                 </form>
                             )}
-                        </div>
-                    </div>
-
-                    <div className="demo-aside">
-                        <p className="kicker">Get in touch</p>
-                        <h1 className="h-giant">
-                            See Nuvae.ai
-                            <br />
-                            in action.
-                        </h1>
-                        <p className="sub">
-                            Schedule a personalized demo and discover how Nuvae protects revenue
-                            across your revenue cycle. Prefer to talk first? Our assistant in the
-                            corner can answer most questions right now.
-                        </p>
-                        <ul className="demo-benefits">
-                            {BENEFITS.map((b) => (
-                                <li key={b}>
-                                    <Check size={17} strokeWidth={2.4} />
-                                    {b}
-                                </li>
-                            ))}
-                        </ul>
-                        <div className="demo-badges">
-                            <span className="trust-chip">HIPAA-aligned</span>
-                            <span className="trust-chip">SOC 2 in progress</span>
                         </div>
                     </div>
                 </div>

@@ -54,17 +54,6 @@ const MODULES = [
 
 const HERO_WIDGETS = [
     {
-        tag: "DETECT · UNDERPAYMENT",
-        tagColor: "#3a5fe0",
-        kind: "line",
-        rows: [
-            ["Contracted rate", "$21,480"],
-            ["Variance", "−$2,370", "flag"],
-        ],
-        chip: "FLAGGED FOR RECOVERY",
-        chipTone: "warn",
-    },
-    {
         tag: "PREVENT · ELIGIBILITY",
         tagColor: "#d94e47",
         kind: "check",
@@ -74,6 +63,17 @@ const HERO_WIDGETS = [
         ],
         chip: "VERIFIED BEFORE VISIT",
         chipTone: "ok",
+    },
+    {
+        tag: "DETECT · UNDERPAYMENT",
+        tagColor: "#3a5fe0",
+        kind: "line",
+        rows: [
+            ["Contracted rate", "$21,480"],
+            ["Variance", "−$2,370", "flag"],
+        ],
+        chip: "FLAGGED FOR RECOVERY",
+        chipTone: "warn",
     },
     {
         tag: "RECOVER · APPEAL",
@@ -98,17 +98,6 @@ const HERO_WIDGETS = [
         chipTone: "info",
     },
     {
-        tag: "RECOVER · AR FOLLOW-UP",
-        tagColor: "#c2453d",
-        kind: "pulse",
-        rows: [
-            ["Payer queue", "8 claims"],
-            ["Next action", "Call scheduled"],
-        ],
-        chip: "FOLLOW-UP READY",
-        chipTone: "warn",
-    },
-    {
         tag: "DETECT · PAYER MIX",
         tagColor: "#2f6fe4",
         kind: "mix",
@@ -118,6 +107,17 @@ const HERO_WIDGETS = [
         ],
         chip: "DASHBOARD UPDATED",
         chipTone: "info",
+    },
+    {
+        tag: "RECOVER · AR FOLLOW-UP",
+        tagColor: "#c2453d",
+        kind: "pulse",
+        rows: [
+            ["Payer queue", "8 claims"],
+            ["Next action", "Call scheduled"],
+        ],
+        chip: "FOLLOW-UP READY",
+        chipTone: "warn",
     },
 ] as const;
 

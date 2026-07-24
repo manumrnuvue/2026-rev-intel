@@ -42,12 +42,13 @@ export default function Careers() {
                 <div className="wrap">
                     <p className="kicker">Careers</p>
                     <h1 className="h-giant">
-                        <Words lines={["Help hospitals keep", "what they've earned."]} />
+                        <Words lines={["Own outcomes,", "not tickets."]} />
                     </h1>
                     <p className="sub mt-30">
-                        We're a small team working on a concrete problem: money hospitals are
-                        owed but don't collect. If that's interesting to you, we'd like to hear
-                        from you — even if nothing below is an exact match.
+                        No open roles right now. We're a small team working on a concrete,
+                        technically hard problem — and we'd rather meet engineers who want to own
+                        that kind of problem before we're hiring, not after. If that's you, we'd
+                        like to hear from you, even if nothing below is an exact match.
                     </p>
 
                     <p className="sub" style={{ marginTop: 30, fontSize: 16, maxWidth: "60ch" }}>
@@ -70,7 +71,7 @@ export default function Careers() {
                     </div>
 
                     <p className="sub" style={{ marginTop: 30, fontSize: 15 }}>
-                        No open requisitions right now — if one of these describes you, email us
+                        Still no requisitions open — if one of these describes you, email us
                         anyway.
                     </p>
                     <div className="price-cta">

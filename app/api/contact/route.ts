@@ -1,4 +1,4 @@
-import nodemailer from "nodemailer";
+import { Resend } from "resend";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -56,15 +56,11 @@ export async function POST(req: Request) {
         return Response.json({ ok: false, error: "Please enter a valid work email." }, { status: 400 });
     }
 
-    const host = process.env.SMTP_HOST;
-    const port = Number(process.env.SMTP_PORT || 587);
-    const user = process.env.SMTP_USER;
-    const pass = process.env.SMTP_PASS;
-    const secure = process.env.SMTP_SECURE === "true" || port === 465;
+    const apiKey = process.env.RESEND_API_KEY;
 
-    if (!host || !user || !pass) {
+    if (!apiKey) {
         // Don't lose the lead if mail isn't wired up yet in this environment.
-        console.error("[contact] SMTP not configured — submission not emailed", {
+        console.error("[contact] RESEND_API_KEY not configured — submission not emailed", {
             fullName,
             workEmail,
             organization,
@@ -100,14 +96,8 @@ export async function POST(req: Request) {
     `;
 
     try {
-        const transporter = nodemailer.createTransport({
-            host,
-            port,
-            secure,
-            auth: { user, pass },
-        });
-
-        await transporter.sendMail({
+        const resend = new Resend(apiKey);
+        const { error } = await resend.emails.send({
             from: CONTACT_FROM,
             to: CONTACT_TO,
             replyTo: `${fullName} <${workEmail}>`,
@@ -116,9 +106,11 @@ export async function POST(req: Request) {
             html,
         });
 
+        if (error) throw error;
+
         return Response.json({ ok: true });
     } catch (err) {
-        console.error("[contact] sendMail failed", err);
+        console.error("[contact] Resend send failed", err);
         return Response.json(
             { ok: false, error: "The demo request could not be sent right now. Please try again." },
             { status: 502 },
