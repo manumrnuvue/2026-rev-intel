@@ -90,7 +90,7 @@ export default function Hero() {
                         $0
                     </div>
                     <p className="leak-line">
-                        At a $300M-revenue hospital, underpayment against contracted rates
+                        At a $300M-revenue healthcare provider, underpayment against contracted rates
                         typically runs <b>1–3% of net patient revenue</b> — paid less than the
                         contract promises. It doesn't look like a problem. It looks like normal.
                     </p>

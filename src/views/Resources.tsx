@@ -43,7 +43,7 @@ const BLOG = [
         date: "Oct 2025",
         author: "Nuvae.ai",
         excerpt:
-            "Ten months of shipping real agents for real hospitals — what AI tooling actually changed for our product, engineering, and QA workflows.",
+            "Ten months of shipping real agents for real healthcare providers — what AI tooling actually changed for our product, engineering, and QA workflows.",
         href: "https://www.linkedin.com/pulse/10-months-building-best-ai-tools-replace-software-teams-nuvae-ai-cdnrc",
     },
 ];
@@ -68,7 +68,7 @@ const GLOSSARY = [
 const SOURCES = [
     { name: "CAQH Index 2025", note: "Industry-wide administrative burden and automation benchmarks." },
     { name: "Experian Health 2025/2026", note: "Payer denial trends and revenue cycle survey data." },
-    { name: "AHA Cost of Caring 2025", note: "Hospital cost and margin pressure benchmarks." },
+    { name: "AHA Cost of Caring 2025", note: "Healthcare Provider cost and margin pressure benchmarks." },
     { name: "Advisory Board 2024", note: "Revenue cycle operations research." },
     { name: "HFMA Pulse Survey", note: "Healthcare finance leader sentiment and denial data." },
     { name: "EY RCM Analysis 2026", note: "Contract underpayment and leakage analysis." },
@@ -152,7 +152,7 @@ export default function Resources() {
 
                     <div className="price-cta">
                         <Link className="btn-big" href="/roi">
-                            See the numbers for your hospital size
+                            See the numbers for your healthcare provider size
                         </Link>
                     </div>
                 </div>

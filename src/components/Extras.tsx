@@ -20,7 +20,7 @@ const EXTRAS: Array<{ title: string; body: string }> = [
     },
     {
         title: "Multi-tenant, from day one",
-        body: "Feature flags and per-tenant configuration let every hospital in a system turn modules on independently.",
+        body: "Feature flags and per-tenant configuration let every healthcare provider in a system turn modules on independently.",
     },
     {
         title: "Security built in",

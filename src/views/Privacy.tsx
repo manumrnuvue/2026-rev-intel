@@ -3,11 +3,11 @@
 const SECTIONS = [
     {
         h: "Overview",
-        p: "Nuvae (\"we,\" \"us\") provides AI-based revenue-protection software to healthcare organizations. This policy explains what information we collect, how we use it, and how it's protected — including protected health information (PHI) processed on behalf of our hospital and health system customers.",
+        p: "Nuvae (\"we,\" \"us\") provides AI-based revenue-protection software to healthcare organizations. This policy explains what information we collect, how we use it, and how it's protected — including protected health information (PHI) processed on behalf of our healthcare provider and health system customers.",
     },
     {
         h: "Information we collect",
-        p: "Account and contact information you provide directly (name, work email, hospital affiliation); usage data from your interaction with our software; and, where applicable under a signed Business Associate Agreement (BAA), protected health information processed solely to deliver the contracted service.",
+        p: "Account and contact information you provide directly (name, work email, healthcare provider affiliation); usage data from your interaction with our software; and, where applicable under a signed Business Associate Agreement (BAA), protected health information processed solely to deliver the contracted service.",
     },
     {
         h: "How we use information",

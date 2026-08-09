@@ -18,7 +18,7 @@ const BENEFITS = [
     "How AI agents automate complex RCM workflows",
     "Integration with your existing EHR systems",
     "Real-world results from early deployments",
-    "Custom implementation roadmap for your hospital",
+    "Custom implementation roadmap for your healthcare provider",
 ];
 
 export default function Contact() {
@@ -130,7 +130,7 @@ export default function Contact() {
                                     <div className="demo-form-row">
                                         <div className="demo-field">
                                             <label htmlFor="organization">
-                                                Hospital / Organization <span className="req">*</span>
+                                                Healthcare Provider / Organization <span className="req">*</span>
                                             </label>
                                             <input id="organization" name="organization" type="text" required autoComplete="organization" />
                                         </div>

@@ -134,7 +134,7 @@ export default function Denials() {
                     <div className="proof-row">
                         <div className="proof-item">
                             <b>30–40%</b>
-                            <span>of eligible denials get appealed at most hospitals today</span>
+                            <span>of eligible denials get appealed at most healthcare providers today</span>
                             <span className="proof-src">CEPR 2025 · JAMA Health Forum 2025</span>
                         </div>
                         <div className="proof-item">

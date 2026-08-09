@@ -31,7 +31,7 @@ export default function About() {
                         <div className="about-block">
                             <h2 className="h-mid">Why we exist</h2>
                             <p className="sub about-p">
-                                Hospitals don't lose revenue because they aren't trying. They lose
+                                Healthcare Providers don't lose revenue because they aren't trying. They lose
                                 it because contracted rates live in PDFs, eligibility checks live
                                 in payer portals, and appeals live in someone's backlog — three
                                 separate failure points, none of them visible until the money is
@@ -78,10 +78,10 @@ export default function About() {
                         <div className="about-block">
                             <h2 className="h-mid">Who we serve</h2>
                             <p className="sub about-p">
-                                From a single small hospital to a multi-facility health system —
+                                From a single small healthcare provider to a multi-facility health system —
                                 the modules are the same, the scale is different.{" "}
                                 <Link className="lgo" href="/solutions" style={{ marginTop: 0, display: "inline" }}>
-                                    See solutions by hospital size →
+                                    See solutions by healthcare provider size →
                                 </Link>
                             </p>
                         </div>

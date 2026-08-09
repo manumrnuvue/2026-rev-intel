@@ -16,7 +16,7 @@ export const FAQ_ENTRIES: FaqEntry[] = [
         id: "what-is-nuvae",
         keywords: ["what is nuvae", "what does nuvae do", "what do you do", "tell me about nuvae"],
         answer:
-            "Nuvae is an AI layer that sits on top of the revenue cycle management systems a hospital already runs — Epic, Cerner, Meditech, and others — without replacing anything. It prevents eligibility denials before a claim is generated, detects contract underpayment on every remittance, and recovers unworked appeals at scale.",
+            "Nuvae is an AI layer that sits on top of the revenue cycle management systems a healthcare provider already runs — Epic, Cerner, Meditech, and others — without replacing anything. It prevents eligibility denials before a claim is generated, detects contract underpayment on every remittance, and recovers unworked appeals at scale.",
     },
     {
         id: "contact-demo",
@@ -25,7 +25,7 @@ export const FAQ_ENTRIES: FaqEntry[] = [
             "schedule a call", "talk to sales", "request a demo", "speak to someone", "talk to someone",
         ],
         answer:
-            "Happy to help right here — ask me anything about the product, pricing, or security first. When you're ready for a live walkthrough, the quickest path is the short form on our Contact page: name, work email, and hospital is all it takes, and our team replies within one business day.",
+            "Happy to help right here — ask me anything about the product, pricing, or security first. When you're ready for a live walkthrough, the quickest path is the short form on our Contact page: name, work email, and healthcare provider is all it takes, and our team replies within one business day.",
         suggestedPage: { path: "/contact", label: "Request a demo" },
     },
     {
@@ -52,7 +52,7 @@ export const FAQ_ENTRIES: FaqEntry[] = [
         id: "implementation-time",
         keywords: ["how long", "implementation", "deploy", "onboarding", "go live", "timeline", "weeks or"],
         answer:
-            "Deployments are measured in weeks, not years. Most hospitals start with a focused pilot on one module — usually eligibility or appeals — before expanding to the rest of the system.",
+            "Deployments are measured in weeks, not years. Most healthcare providers start with a focused pilot on one module — usually eligibility or appeals — before expanding to the rest of the system.",
     },
     {
         id: "on-premise",
@@ -71,8 +71,8 @@ export const FAQ_ENTRIES: FaqEntry[] = [
         id: "roi",
         keywords: ["roi", "value", "worth", "how much can we recover", "business case"],
         answer:
-            "Typical annual value ranges from $755K–$1.79M for a small hospital up to $13.2M–$25.3M for a large health system, depending on claim volume and payer mix — grounded in observed deployment patterns, not projections.",
-        suggestedPage: { path: "/roi", label: "See the numbers by hospital size" },
+            "Typical annual value ranges from $755K–$1.79M for a small healthcare provider up to $13.2M–$25.3M for a large health system, depending on claim volume and payer mix — grounded in observed deployment patterns, not projections.",
+        suggestedPage: { path: "/roi", label: "See the numbers by healthcare provider size" },
     },
     {
         id: "company",
