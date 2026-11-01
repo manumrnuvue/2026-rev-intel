@@ -7,12 +7,12 @@ import { Words, revealCopy, revealWords } from "../lib/anim";
 
 const SIZES = [
     {
-        label: "Small healthcare provider",
+        label: "Small hospital",
         total: "$755k – $1.79M",
         note: "Eligibility and appeals recovery lead the way — the fastest cash-cycle wins for a lean team.",
     },
     {
-        label: "Mid-size healthcare provider",
+        label: "Mid-size hospital",
         total: "$5.17M – $6.92M",
         note: "Contract analytics becomes the single largest line, as payer mix and claim volume compound.",
     },
@@ -53,7 +53,7 @@ export default function Roi() {
                 <div className="wrap">
                     <p className="kicker">The business case</p>
                     <h1 className="h-giant">
-                        <Words lines={["What it's worth,", "by healthcare provider size."]} />
+                        <Words lines={["What it's worth,", "by hospital size."]} />
                     </h1>
                     <p className="sub mt-30">
                         Eligibility reduces denials entering the system. Contract analytics

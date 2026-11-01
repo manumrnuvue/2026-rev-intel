@@ -75,7 +75,7 @@ export default function CompareTable() {
                     <Words lines={["Industry average.", "Nuvae."]} />
                 </h2>
                 <p className="sub mt-26">
-                    Cited industry benchmarks next to what Nuvae healthcare providers actually see —
+                    Cited industry benchmarks next to what Nuvae hospitals actually see —
                     every figure sourced, nothing rounded up.
                 </p>
 

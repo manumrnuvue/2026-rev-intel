@@ -15,11 +15,11 @@ const ROLES = [
     },
     {
         title: "RCM Domain Lead",
-        line: "Former Business Office or revenue cycle operations leader who translates real healthcare provider workflows into product requirements.",
+        line: "Former Business Office or revenue cycle operations leader who translates real hospital workflows into product requirements.",
     },
     {
         title: "Customer Success / Implementation",
-        line: "Owns the first 90 days of a healthcare provider's deployment — the difference between 'installed' and 'recovering revenue.'",
+        line: "Owns the first 90 days of a hospital's deployment — the difference between 'installed' and 'recovering revenue.'",
     },
 ];
 

@@ -7,13 +7,13 @@ import { Words, revealCopy, revealWords } from "../lib/anim";
 
 const SEGMENTS = [
     {
-        label: "Small healthcare provider",
+        label: "Small hospital",
         sub: "Lean Business Office, high manual load",
         line: "Start with eligibility verification and appeal automation. These two modules alone typically pay for themselves inside the first quarter, because they remove the most manual, most repetitive work from the smallest team.",
         ctaLabel: "Talk to sales →",
     },
     {
-        label: "Mid-size healthcare provider",
+        label: "Mid-size hospital",
         sub: "Growing claim volume and payer mix",
         line: "Contract rate-matrix analytics becomes the biggest lever at this scale. With more payers and more contract versions in play, underpayment hides easily — Nuvae catches it on every remittance, automatically.",
         ctaLabel: "Talk to sales →",
@@ -21,7 +21,7 @@ const SEGMENTS = [
     {
         label: "Large health system",
         sub: "Multiple facilities, one back office",
-        line: "Every module, deployed system-wide, with per-facility configuration and role-based access — so each healthcare provider in the system runs its own eligibility, contracts, and appeals workflows independently, under one umbrella. On-premise deployment is available for systems with strict data-residency requirements.",
+        line: "Every module, deployed system-wide, with per-facility configuration and role-based access — so each hospital in the system runs its own eligibility, contracts, and appeals workflows independently, under one umbrella. On-premise deployment is available for systems with strict data-residency requirements.",
         ctaLabel: "Talk to our enterprise team →",
     },
 ];
@@ -54,7 +54,7 @@ export default function Solutions() {
                 <div className="wrap">
                     <p className="kicker">Solutions by customer type</p>
                     <h1 className="h-giant">
-                        <Words lines={["Tailored to your", "healthcare provider's scale."]} />
+                        <Words lines={["Tailored to your", "hospital's scale."]} />
                     </h1>
                     <p className="sub mt-30">
                         The modules are the same everywhere. What changes is which one matters
@@ -79,7 +79,7 @@ export default function Solutions() {
                         ))}
                     </div>
                     <Link className="lgo" href="/roi">
-                        See the value by healthcare provider size →
+                        See the value by hospital size →
                     </Link>
                 </div>
             </section>

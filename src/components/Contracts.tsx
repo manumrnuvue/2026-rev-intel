@@ -458,7 +458,7 @@ export default function Contracts() {
                     </div>
                     <p className="sub sav-sub">
                         annual value from contract analytics alone, at a $300M-NPR
-                        healthcare provider — mid-path, year one.
+                        hospital — mid-path, year one.
                         <br />
                         Underpayment recovery. Rate negotiation uplift. Analyst time back.
                     </p>

@@ -12,14 +12,14 @@ const SIZES: Record<
     { label: string; eligibility: string; contracts: string; appeals: string; total: string }
 > = {
     small: {
-        label: "Small healthcare provider",
+        label: "Small hospital",
         eligibility: "$135k – $280k",
         contracts: "$310k – $790k",
         appeals: "$310k – $720k",
         total: "$755k – $1.79M",
     },
     mid: {
-        label: "Mid-size healthcare provider",
+        label: "Mid-size hospital",
         eligibility: "$460k – $590k",
         contracts: "$1.92M – $2.68M",
         appeals: "$2.79M – $3.65M",
@@ -82,7 +82,7 @@ export default function ValueModel() {
                     that weren't paid at all. Each module is independent and additive.
                 </p>
 
-                <div className="size-toggle" role="group" aria-label="Healthcare Provider size">
+                <div className="size-toggle" role="group" aria-label="Hospital size">
                     {(Object.keys(SIZES) as SizeKey[]).map((k) => (
                         <button
                             key={k}

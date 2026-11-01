@@ -27,7 +27,7 @@ const FAQ_ITEMS = [
     },
     {
         q: "How long does implementation take?",
-        a: "Deployments are measured in weeks, not years. Most healthcare providers start with a focused pilot on one module before expanding to the full system.",
+        a: "Deployments are measured in weeks, not years. Most hospitals start with a focused pilot on one module before expanding to the full system.",
     },
     {
         q: "Is Nuvae HIPAA compliant?",
@@ -73,7 +73,7 @@ export default function Product() {
                 <section className="scene light" id="product-faq">
                     <div className="wrap">
                         <p className="kicker">Common questions</p>
-                        <h2 className="h-mid">Questions healthcare providers ask before they switch.</h2>
+                        <h2 className="h-mid">Questions hospitals ask before they switch.</h2>
                         <Faq items={FAQ_ITEMS} />
                     </div>
                 </section>

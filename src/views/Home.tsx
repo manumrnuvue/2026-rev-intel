@@ -370,7 +370,7 @@ export default function Home() {
                         </h1>
                         
                         <p className="hero-note">
-                            Healthcare Providers quietly lose 1–3% of net patient revenue to underpayment,
+                            Hospitals quietly lose 1–3% of net patient revenue to underpayment,
                             denials, and unworked appeals. Nuvae finds it — and brings it home.
                         </p>
                         <div className="price-cta">
@@ -502,12 +502,12 @@ export default function Home() {
                     </h2>
                     <div className="home-roi-num grad num">$5.17M – $6.92M</div>
                     <p className="sub" style={{ margin: "18px auto 0", textAlign: "center" }}>
-                        annual value for a mid-size healthcare provider — eligibility, contract
+                        annual value for a mid-size hospital — eligibility, contract
                         analytics, and appeals combined, year one.
                     </p>
                     <div className="price-cta" style={{ justifyContent: "center" }}>
                         <Link className="btn-big" href="/roi">
-                            See the numbers by healthcare provider size
+                            See the numbers by hospital size
                         </Link>
                     </div>
                 </div>

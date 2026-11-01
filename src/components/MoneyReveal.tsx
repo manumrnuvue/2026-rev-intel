@@ -5,7 +5,7 @@ import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { prefersReducedMotion } from "../lib/anim";
 
-/** Annual figures for a mid-size healthcare provider. Loss is what leaks out; recovered is
+/** Annual figures for a mid-size hospital. Loss is what leaks out; recovered is
  *  what Nuvae brings back. Kept in step with the ROI chapter. */
 const LOSS = 6_912_000;
 const RECOVERED = 5_174_000;
@@ -13,7 +13,7 @@ const RECOVERED = 5_174_000;
 const money = (n: number) => "$" + Math.round(n).toLocaleString("en-US");
 
 /**
- * The beat right after the hero: the revenue a healthcare provider quietly loses every
+ * The beat right after the hero: the revenue a hospital quietly loses every
  * year (red), then the frame flips green — "Nuvae finds the gap" — and shows
  * what gets recovered. Figures are static; only a light fade brings them in.
  */
@@ -84,7 +84,7 @@ export default function MoneyReveal() {
         <section className="scene dark-section money-reveal" id="money" ref={rootRef}>
             <div className="wrap money-wrap">
                 <div className="money-loss">
-                    <span className="money-label">Every year, a mid-size healthcare provider quietly loses</span>
+                    <span className="money-label">Every year, a mid-size hospital quietly loses</span>
                     <div className="money-num loss num" ref={lossNumRef}>
                         $0
                     </div>

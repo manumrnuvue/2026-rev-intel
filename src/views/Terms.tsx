@@ -3,7 +3,7 @@
 const SECTIONS = [
     {
         h: "Acceptance of terms",
-        p: "By accessing or using the Nuvae website or platform, you agree to these terms. If you're using Nuvae on behalf of a healthcare provider or health system, you're agreeing on that organization's behalf.",
+        p: "By accessing or using the Nuvae website or platform, you agree to these terms. If you're using Nuvae on behalf of a hospital or health system, you're agreeing on that organization's behalf.",
     },
     {
         h: "The service",

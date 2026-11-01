@@ -148,7 +148,7 @@ export default function EngineMap() {
                             ))}
 
                             {/* input nodes */}
-                            {[{ n: SRC_H, g: "H", l: "Your healthcare provider" }, { n: SRC_C, g: "C", l: "Payer contracts" }].map(({ n, g, l }) => (
+                            {[{ n: SRC_H, g: "H", l: "Your hospital" }, { n: SRC_C, g: "C", l: "Payer contracts" }].map(({ n, g, l }) => (
                                 <g className="eg-node" data-id={n.id} data-kind="source" key={n.id}>
                                     <circle cx={n.x} cy={n.y} r={n.r} fill="#fff" stroke={n.color} strokeWidth="2.6" />
                                     <text x={n.x} y={n.y} textAnchor="middle" dominantBaseline="central" fill={n.color} style={{ fontSize: 22, fontWeight: 800 }}>{g}</text>

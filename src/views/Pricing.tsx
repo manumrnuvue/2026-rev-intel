@@ -11,14 +11,14 @@ import Faq from "../components/Faq";
 const TIERS = [
     {
         name: "Starter",
-        forWhom: "For small healthcare providers",
-        line: "Eligibility verification and appeal automation — the fastest path to cash-cycle relief. Typically the first module healthcare providers turn on.",
+        forWhom: "For small hospitals",
+        line: "Eligibility verification and appeal automation — the fastest path to cash-cycle relief. Typically the first module hospitals turn on.",
         includes: ["Eligibility verification", "Appeal generation & AR recovery", "Standard reporting"],
         ctaLabel: "Talk to sales →",
     },
     {
         name: "Growth",
-        forWhom: "For mid-size healthcare providers",
+        forWhom: "For mid-size hospitals",
         line: "Adds contract rate-matrix analytics — where recovered value compounds fastest at this claim volume.",
         includes: ["Everything in Starter", "Contract rate-matrix analytics", "Stale-rate detection", "Government rate crawler"],
         featured: true,
@@ -35,7 +35,7 @@ const TIERS = [
 
 const HOW_IT_WORKS = [
     "Priced per module, so you only pay for what you turn on.",
-    "Scales with claim volume, not headcount — small healthcare providers and large health systems pay for different things.",
+    "Scales with claim volume, not headcount — small hospitals and large health systems pay for different things.",
     "No multi-year lock-in required to start — most deployments are live in weeks.",
     "A BAA is included with every engagement handling PHI.",
 ];
@@ -47,7 +47,7 @@ const FAQ_ITEMS = [
     },
     {
         q: "Do we have to commit to every module?",
-        a: "No. Start with Starter and add modules as they prove out — most healthcare providers begin with eligibility and appeals, then add contract analytics once claim volume justifies it.",
+        a: "No. Start with Starter and add modules as they prove out — most hospitals begin with eligibility and appeals, then add contract analytics once claim volume justifies it.",
     },
     {
         q: "Is there a setup or implementation fee?",
@@ -55,7 +55,7 @@ const FAQ_ITEMS = [
     },
     {
         q: "Can a health system run different modules at different facilities?",
-        a: "Yes — Enterprise includes per-facility configuration, so each healthcare provider in a system can run its own module mix under one contract.",
+        a: "Yes — Enterprise includes per-facility configuration, so each hospital in a system can run its own module mix under one contract.",
     },
     {
         q: "Is on-premise deployment available?",
@@ -144,7 +144,7 @@ export default function Pricing() {
 
                     <div className="price-cta">
                         <Link className="btn-quiet" href="/roi">
-                            See what it's worth for your healthcare provider size first
+                            See what it's worth for your hospital size first
                         </Link>
                         <Link className="btn-big" href="/contact">
                             Talk to sales
