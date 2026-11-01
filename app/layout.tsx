@@ -5,17 +5,17 @@ import RootShell from "./RootShell";
 export const metadata: Metadata = {
     metadataBase: new URL("https://nuvae.ai"),
     title: {
-        default: "Nuvae — AI Revenue Protection for Healthcare RCM | Eligibility, Contracts, Appeals",
+        default: "Nuvae | AI Revenue Cycle Platform for Hospitals and Health Systems",
         template: "%s",
     },
     description:
-        "Nuvae is the AI revenue-protection layer that runs on top of the RCM you already have. Prevent eligibility denials, detect contract underpayment on every remittance, and recover unworked appeals at scale — without replacing your systems.",
+        "Nuvae is an AI revenue cycle platform for US hospitals and health systems. It runs on top of Epic, Cerner or Meditech to prevent eligibility and prior authorization denials, flag payer underpayments and contract rates below Medicare, and work denial appeals at scale.",
     robots: { index: true, follow: true },
     alternates: { canonical: "https://nuvae.ai/" },
     openGraph: {
         type: "website",
         siteName: "Nuvae",
-        title: "Nuvae — AI Revenue Protection for Healthcare RCM",
+        title: "Nuvae | AI Revenue Cycle Platform for Hospitals and Health Systems",
         description:
             "Prevent eligibility denials, detect contract underpayment on every remittance, and recover unworked appeals at scale — an AI layer on top of the RCM you already run.",
         url: "https://nuvae.ai/",
@@ -23,26 +23,66 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: "summary",
-        title: "Nuvae — AI Revenue Protection for Healthcare RCM",
+        title: "Nuvae | AI Revenue Cycle Platform for Hospitals and Health Systems",
         description:
             "Prevent eligibility denials, detect contract underpayment, and recover unworked appeals — without replacing your RCM.",
     },
 };
 
+// Organization, WebSite and SoftwareApplication as one graph so AI and search engines
+// resolve "Nuvae" to a single entity with a clear category and audience.
 const JSON_LD = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    name: "Nuvae",
-    applicationCategory: "BusinessApplication",
-    operatingSystem: "Web",
-    description:
-        "AI revenue-protection layer for healthcare revenue cycle management: eligibility verification, contract rate matrix analytics, and automated appeal generation.",
-    url: "https://nuvae.ai/",
-    publisher: {
-        "@type": "Organization",
-        name: "Nuvae",
-        url: "https://nuvae.ai/",
-    },
+    "@graph": [
+        {
+            "@type": "Organization",
+            "@id": "https://nuvae.ai/#org",
+            name: "Nuvae",
+            alternateName: "Nuvae.ai",
+            url: "https://nuvae.ai/",
+            logo: "https://nuvae.ai/icon.svg",
+            email: "contact@nuvae.ai",
+            description:
+                "Nuvae builds AI agents for the hospital revenue cycle: eligibility, prior authorization, payer contract analytics, underpayment detection, denial appeals and A/R follow-up.",
+            knowsAbout: [
+                "Hospital revenue cycle management",
+                "Eligibility verification",
+                "Prior authorization automation",
+                "Payer contract management",
+                "Payer rate benchmarking against Medicare",
+                "Underpayment detection",
+                "Denial management and appeals",
+            ],
+        },
+        {
+            "@type": "WebSite",
+            "@id": "https://nuvae.ai/#website",
+            url: "https://nuvae.ai/",
+            name: "Nuvae",
+            publisher: { "@id": "https://nuvae.ai/#org" },
+        },
+        {
+            "@type": "SoftwareApplication",
+            name: "Nuvae",
+            applicationCategory: "BusinessApplication",
+            applicationSubCategory: "Healthcare revenue cycle management",
+            operatingSystem: "Web",
+            url: "https://nuvae.ai/",
+            description:
+                "AI revenue cycle platform for US hospitals and health systems that runs on top of Epic, Cerner or Meditech: eligibility and prior authorization checks, payer contract and rate analytics, underpayment detection, and denial appeals.",
+            audience: { "@type": "BusinessAudience", audienceType: "Hospitals and health systems" },
+            featureList: [
+                "Eligibility verification before the visit",
+                "Prior authorization rule checks",
+                "Payer contract repository and rate matrix",
+                "Payer rates benchmarked against Medicare",
+                "Underpayment detection on every remittance",
+                "Denial scoring and contract-cited appeals",
+                "A/R follow-up with payers",
+            ],
+            publisher: { "@id": "https://nuvae.ai/#org" },
+        },
+    ],
 };
 
 // Light-first design; dark mode was removed. Clear any stale persisted theme

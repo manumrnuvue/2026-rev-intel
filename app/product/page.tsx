@@ -4,7 +4,7 @@ import Product from "../../src/views/Product";
 export const metadata: Metadata = {
     title: "Product — Nuvae",
     description:
-        "Nuvae is the AI revenue-protection layer that runs on top of the RCM you already have. Prevent eligibility denials, detect contract underpayment on every remittance, and recover unworked appeals at scale — without replacing your systems.",
+        "How Nuvae works for hospitals and health systems, module by module: eligibility and prior authorization checks, payer contract and rate analytics, underpayment detection, denial appeals and A/R follow-up, on top of Epic, Cerner or Meditech.",
     alternates: { canonical: "https://nuvae.ai/product" },
     openGraph: {
         title: "Product — Nuvae",

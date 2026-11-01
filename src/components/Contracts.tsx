@@ -125,6 +125,8 @@ export default function Contracts() {
                 scrollTrigger: { trigger: ".gov", start: "top 62%" },
             });
 
+            // Server HTML carries the real figure so crawlers read it; reset to $0 so the scroll count-up starts from zero.
+            if (savNumRef.current) savNumRef.current.textContent = formatUsd(0);
             const sav = { v: 0 };
             gsap.timeline({
                 scrollTrigger: {
@@ -454,7 +456,7 @@ export default function Contracts() {
                         All of it adds up to one number.
                     </h2>
                     <div className="sav-num grad num" ref={savNumRef}>
-                        $0
+                        {formatUsd(2_300_000)}
                     </div>
                     <p className="sub sav-sub">
                         annual value from contract analytics alone, at a $300M-NPR

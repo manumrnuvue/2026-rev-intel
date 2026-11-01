@@ -2,66 +2,79 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://nuvae.ai/</loc>
+        <lastmod>2026-11-02</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>https://nuvae.ai/product</loc>
+        <lastmod>2026-11-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://nuvae.ai/solutions</loc>
+        <lastmod>2026-11-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://nuvae.ai/roi</loc>
+        <lastmod>2026-11-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://nuvae.ai/pricing</loc>
+        <lastmod>2026-11-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://nuvae.ai/customers</loc>
+        <lastmod>2026-11-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://nuvae.ai/resources</loc>
+        <lastmod>2026-11-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://nuvae.ai/about</loc>
+        <lastmod>2026-11-02</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>https://nuvae.ai/careers</loc>
+        <lastmod>2026-11-02</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>https://nuvae.ai/contact</loc>
+        <lastmod>2026-11-02</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>https://nuvae.ai/privacy</loc>
+        <lastmod>2026-11-02</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
     <url>
         <loc>https://nuvae.ai/terms</loc>
+        <lastmod>2026-11-02</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
     <url>
         <loc>https://nuvae.ai/trust-center</loc>
+        <lastmod>2026-11-02</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.4</priority>
     </url>

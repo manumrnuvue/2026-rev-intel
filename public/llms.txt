@@ -1,0 +1,30 @@
+# Nuvae
+
+> Nuvae (nuvae.ai) is an AI revenue cycle platform for US hospitals and health systems. It runs on top of the EHR and RCM systems a hospital already uses (Epic, Cerner/Oracle Health, Meditech and others) and uses AI agents to prevent eligibility and prior authorization denials, find payer underpayments and contract rates that have slipped below Medicare, and work denial appeals and A/R follow-up. Nothing is replaced.
+
+Nuvae is built for hospital revenue cycle, patient access, business office and managed care contracting teams, from small community hospitals to multi-facility health systems. It is HIPAA compliant and SOC 2 Type II certified, and signs a Business Associate Agreement (BAA).
+
+How it works, in three layers:
+
+- Prevent: eligibility verification before the visit, registration checks, and prior authorization rule checks, so claims are not denied for front-end errors.
+- Detect: a payer contract repository and rate matrix, payer rates benchmarked against Medicare, and every remittance checked against the contracted rate to flag underpayment.
+- Recover: denials scored for appealability, appeals drafted with the governing contract cited, and payer follow-up on unresolved A/R.
+
+Indicative results from early pilots: about 70% less staff time on appeals, about 28% higher first-pass claim acceptance, and about 90% faster access to contract terms. Most hospitals start with one module (usually eligibility or appeals) and expand.
+
+## Pages
+
+- [Home](https://nuvae.ai/): overview of the platform and the revenue it recovers
+- [Product](https://nuvae.ai/product): every module and workflow, with an FAQ
+- [Solutions](https://nuvae.ai/solutions): what to deploy for small hospitals, mid-size hospitals and health systems
+- [ROI](https://nuvae.ai/roi): estimated annual value by hospital size, with cited benchmarks
+- [Pricing](https://nuvae.ai/pricing): priced per module and scaled to claim volume, with an FAQ
+- [Customers](https://nuvae.ai/customers): who Nuvae serves
+- [Trust Center](https://nuvae.ai/trust-center): HIPAA, SOC 2 Type II, data handling and deployment options
+- [Resources](https://nuvae.ai/resources): blog, glossary and industry benchmarks
+- [About](https://nuvae.ai/about): why Nuvae exists
+- [Contact](https://nuvae.ai/contact): request a walkthrough
+
+## Contact
+
+- Email: contact@nuvae.ai

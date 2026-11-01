@@ -32,6 +32,9 @@ export default function MoneyReveal() {
                 return;
             }
 
+            // Server HTML carries the real figure so crawlers read it; reset to $0 so the scroll count-up starts from zero.
+            if (lossNumRef.current) lossNumRef.current.textContent = money(0);
+            if (recoverNumRef.current) recoverNumRef.current.textContent = money(0);
             const loss = { v: 0 };
             const recovered = { v: 0 };
 
@@ -86,7 +89,7 @@ export default function MoneyReveal() {
                 <div className="money-loss">
                     <span className="money-label">Every year, a mid-size hospital quietly loses</span>
                     <div className="money-num loss num" ref={lossNumRef}>
-                        $0
+                        {money(LOSS)}
                     </div>
                     <p className="money-sub">
                         to underpayment, eligibility denials, and appeals no one had time to
@@ -100,7 +103,7 @@ export default function MoneyReveal() {
                     </span>
                     <span className="money-label recovered">Nuvae finds the gap — and recovers</span>
                     <div className="money-num gain num" ref={recoverNumRef}>
-                        $0
+                        {money(RECOVERED)}
                     </div>
                     <p className="money-sub">
                         brought back and returned to your bottom line. Money that was always

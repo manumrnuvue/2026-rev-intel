@@ -39,6 +39,8 @@ export default function Hero() {
                 .to(".hero-inner", { scale: 0.86, opacity: 0, filter: "blur(8px)", ease: "none" })
                 .to(".scroll-cue", { opacity: 0 }, 0);
 
+            // Server HTML carries the real figure so crawlers read it; reset to $0 so the scroll count-up starts from zero.
+            if (leakNumRef.current) leakNumRef.current.textContent = formatUsd(0);
             const leak = { v: 0 };
             gsap.timeline({
                 scrollTrigger: {
@@ -87,7 +89,7 @@ export default function Hero() {
                 <div className="leak-inner wrap">
                     <p className="leak-label">What payers quietly keep</p>
                     <div className="leak-num num" ref={leakNumRef}>
-                        $0
+                        {formatUsd(4_500_000)}
                     </div>
                     <p className="leak-line">
                         At a $300M-revenue hospital, underpayment against contracted rates
