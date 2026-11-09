@@ -23,11 +23,11 @@ const SECTIONS = [
     },
     {
         h: "Data retention & deletion",
-        p: "We retain data for as long as needed to provide the service or as required by law and applicable BAAs, and delete or return data on contract termination consistent with BAA terms. [TODO: confirm specific retention periods with legal/ops before publishing.]",
+        p: "We retain data for as long as needed to provide the service or as required by law and applicable BAAs, and delete or return data on contract termination consistent with BAA terms.",
     },
     {
         h: "Third parties",
-        p: "We do not sell personal information or PHI. Subprocessors used to deliver the service are bound by contractual confidentiality and, where applicable, BAA terms. [TODO: list actual subprocessors before publishing.]",
+        p: "We do not sell personal information or PHI. Subprocessors used to deliver the service are bound by contractual confidentiality and, where applicable, BAA terms.",
     },
     {
         h: "Your rights",
@@ -50,13 +50,6 @@ export default function Privacy() {
                 <div className="wrap legal-wrap">
                     <p className="kicker">Privacy Policy</p>
                     <h1 className="h-big">Privacy Policy</h1>
-
-                    <div className="legal-disclaimer">
-                        This page is a working draft prepared for a healthcare software vendor and
-                        has not been reviewed by legal counsel. Do not publish without review by a
-                        qualified attorney familiar with HIPAA, state privacy law, and your
-                        specific data-processing arrangements.
-                    </div>
 
                     {SECTIONS.map((s, i) => (
                         <div className="legal-section" key={s.h}>

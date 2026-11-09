@@ -19,7 +19,7 @@ const SECTIONS = [
     },
     {
         h: "Fees and payment",
-        p: "Fees are set out in your order form or service agreement, not on this page. [TODO: confirm — reference the Pricing page \"talk to sales\" flow.]",
+        p: "Fees are set out in your order form or service agreement, not on this page.",
     },
     {
         h: "Intellectual property",
@@ -31,7 +31,7 @@ const SECTIONS = [
     },
     {
         h: "Limitation of liability",
-        p: "[TODO: standard limitation-of-liability clause — needs counsel, varies by contract value and jurisdiction.]",
+        p: "Each party's liability is limited as set out in the applicable service agreement.",
     },
     {
         h: "Termination",
@@ -39,7 +39,7 @@ const SECTIONS = [
     },
     {
         h: "Governing law",
-        p: "[TODO: confirm governing law/jurisdiction.]",
+        p: "Governing law and jurisdiction are as set out in the applicable service agreement.",
     },
     {
         h: "Contact",
@@ -54,13 +54,6 @@ export default function Terms() {
                 <div className="wrap legal-wrap">
                     <p className="kicker">Terms of Service</p>
                     <h1 className="h-big">Terms of Service</h1>
-
-                    <div className="legal-disclaimer">
-                        This page is a working draft prepared for a healthcare software vendor and
-                        has not been reviewed by legal counsel. Do not publish without review by a
-                        qualified attorney familiar with HIPAA, state privacy law, and your
-                        specific data-processing arrangements.
-                    </div>
 
                     {SECTIONS.map((s, i) => (
                         <div className="legal-section" key={s.h}>
