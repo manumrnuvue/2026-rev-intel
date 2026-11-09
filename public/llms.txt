@@ -25,6 +25,16 @@ Indicative results from early pilots: about 70% less staff time on appeals, abou
 - [About](https://nuvae.ai/about): why Nuvae exists
 - [Contact](https://nuvae.ai/contact): request a walkthrough
 
+## Guides
+
+- [All guides](https://nuvae.ai/guides): revenue cycle guides for hospitals
+- [How to benchmark payer contract rates against Medicare](https://nuvae.ai/guides/payer-contract-rates-vs-medicare): step-by-step method to find which payer contracts pay less relative to Medicare before renegotiation
+- [AI revenue cycle platforms for hospitals: 2026 buyer's guide](https://nuvae.ai/guides/ai-revenue-cycle-platforms-for-hospitals): vendor categories, evaluation criteria and questions to ask
+- [How Nuvae works with Epic, Oracle Health (Cerner) and Meditech](https://nuvae.ai/guides/epic-cerner-meditech-integration): data used per module and how to verify any vendor's EHR integration
+- [How to evaluate an AI revenue cycle vendor](https://nuvae.ai/guides/evaluate-ai-revenue-cycle-vendor): security, proof, reference questions, AI risk controls and red flags
+- [How hospitals reduce claim denials and underpayments without adding staff](https://nuvae.ai/guides/reduce-claim-denials-without-adding-staff): front end, contract pricing and appeals
+- [AI agents vs outsourced billing, RPA and EHR-native tools](https://nuvae.ai/guides/ai-agents-vs-outsourcing-rpa-ehr-tools): trade-offs for hospitals
+
 ## Contact
 
 - Email: contact@nuvae.ai

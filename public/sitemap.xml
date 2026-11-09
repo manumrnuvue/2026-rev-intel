@@ -2,49 +2,49 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://nuvae.ai/</loc>
-        <lastmod>2026-11-02</lastmod>
+        <lastmod>2026-11-09</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>https://nuvae.ai/product</loc>
-        <lastmod>2026-11-02</lastmod>
+        <lastmod>2026-11-09</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://nuvae.ai/solutions</loc>
-        <lastmod>2026-11-02</lastmod>
+        <lastmod>2026-11-09</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://nuvae.ai/roi</loc>
-        <lastmod>2026-11-02</lastmod>
+        <lastmod>2026-11-09</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://nuvae.ai/pricing</loc>
-        <lastmod>2026-11-02</lastmod>
+        <lastmod>2026-11-09</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://nuvae.ai/customers</loc>
-        <lastmod>2026-11-02</lastmod>
+        <lastmod>2026-11-09</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://nuvae.ai/resources</loc>
-        <lastmod>2026-11-02</lastmod>
+        <lastmod>2026-11-09</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://nuvae.ai/about</loc>
-        <lastmod>2026-11-02</lastmod>
+        <lastmod>2026-11-09</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.5</priority>
     </url>
@@ -74,8 +74,50 @@
     </url>
     <url>
         <loc>https://nuvae.ai/trust-center</loc>
-        <lastmod>2026-11-02</lastmod>
+        <lastmod>2026-11-09</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.4</priority>
+    </url>
+    <url>
+        <loc>https://nuvae.ai/guides</loc>
+        <lastmod>2026-11-09</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://nuvae.ai/guides/payer-contract-rates-vs-medicare</loc>
+        <lastmod>2026-11-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://nuvae.ai/guides/ai-revenue-cycle-platforms-for-hospitals</loc>
+        <lastmod>2026-11-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://nuvae.ai/guides/epic-cerner-meditech-integration</loc>
+        <lastmod>2026-11-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://nuvae.ai/guides/evaluate-ai-revenue-cycle-vendor</loc>
+        <lastmod>2026-11-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://nuvae.ai/guides/reduce-claim-denials-without-adding-staff</loc>
+        <lastmod>2026-11-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://nuvae.ai/guides/ai-agents-vs-outsourcing-rpa-ehr-tools</loc>
+        <lastmod>2026-11-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
     </url>
 </urlset>

@@ -26,6 +26,12 @@ export default function Footer() {
                         <Link href="/contact">Contact</Link>
                     </div>
                     <div className="foot-col">
+                        <Link href="/guides">Guides</Link>
+                        <Link href="/guides/payer-contract-rates-vs-medicare">Payer rates vs Medicare</Link>
+                        <Link href="/guides/epic-cerner-meditech-integration">Epic, Cerner and Meditech</Link>
+                        <Link href="/guides/evaluate-ai-revenue-cycle-vendor">Vendor evaluation checklist</Link>
+                    </div>
+                    <div className="foot-col">
                         <Link href="/trust-center">Trust Center</Link>
                         <Link href="/privacy">Privacy Policy</Link>
                         <Link href="/terms">Terms of Service</Link>

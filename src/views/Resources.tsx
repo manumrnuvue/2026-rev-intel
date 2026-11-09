@@ -5,6 +5,8 @@ import Link from "next/link";
 import { useGSAP } from "@gsap/react";
 import { Words, revealCopy, revealWords } from "../lib/anim";
 
+export type GuideCard = { slug: string; kicker: string; title: string; description: string };
+
 const BLOG = [
     {
         title: "Beyond the AI Chat Hype: Why Healthcare Finance Needs Financial Intelligence, Not Just LLMs",
@@ -76,7 +78,7 @@ const SOURCES = [
     { name: "JAMA Health Forum 2025", note: "Peer-reviewed clinical and health-systems research." },
 ];
 
-export default function Resources() {
+export default function Resources({ guides = [] }: { guides?: GuideCard[] }) {
     const rootRef = useRef<HTMLElement>(null);
 
     useGSAP(
@@ -101,6 +103,17 @@ export default function Resources() {
                         Notes from the team, benchmarks, and a shared vocabulary for the AI layer
                         on top of your RCM.
                     </p>
+
+                    <h2 className="h-mid res-section-h">Guides</h2>
+                    <div className="also-grid guide-related">
+                        {guides.map((g) => (
+                            <Link className="also" href={`/guides/${g.slug}`} key={g.slug}>
+                                <span className="guide-card-kicker">{g.kicker}</span>
+                                <b>{g.title}</b>
+                                <p>{g.description}</p>
+                            </Link>
+                        ))}
+                    </div>
 
                     <h2 className="h-mid res-section-h">From the blog</h2>
                     <div className="blog-grid">
